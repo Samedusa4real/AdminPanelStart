@@ -1,0 +1,15 @@
+﻿@model List<Genre>
+<nav class="category-nav   ">
+    <div>
+        <a href="javascript:void(0)" class="category-trigger">
+            <i class="fa fa-bars"></i>Browse
+            categories
+        </a>
+        <ul class="category-menu">
+            @foreach (var item in Model)
+            {
+                <li class="cat-item"><a href="#">@item.Name</a></li>
+            }
+        </ul>
+    </div>
+</nav>

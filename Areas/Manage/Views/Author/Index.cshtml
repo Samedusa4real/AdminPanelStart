@@ -1,0 +1,35 @@
+﻿@model List<Author>
+@{
+    int count = 0;
+}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <h1 class="justify-content-center align-items-center"> Authors </h1>
+        <a class="btn btn-primary" asp-action="create"> Create </a>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">FullName</th>
+                    <th scope="col">BookCount</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    count++;
+                    <tr>
+                        <th scope="row">@count</th>
+                        <td>@item.Name</td>
+                        <td>@item.Books.Count</td>
+                        <td>
+                            <a class="btn btn-warning">Edit</a>
+                            <a class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
